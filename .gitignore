@@ -4,5 +4,5 @@ src/
 *.pkg.tar.xz
 
 # source files
-genpuid_linux_1.4.tgz
+genpuid_linux_*.tgz
 keys.txt
