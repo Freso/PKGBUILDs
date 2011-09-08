@@ -14,8 +14,14 @@ md5sums=('fa4a6ae23adaaefa02f07de6321913fe'
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
-  ./configure --prefix=/usr
-  make
+  mkdir -p $pkgdir/usr/bin
+  install -m755 -t $pkgdir/usr/bin genpuid
+  install -m755 -t $pkgdir/usr/bin mipcore
+  mkdir -p $pkgdir/usr/share/doc/$pkgname
+  install -m644 -t $pkgdir/usr/share/doc/$pkgname readme.txt
+  install -m644 -t $pkgdir/usr/share/doc/$pkgname changelog.txt
+  mkdir -p $pkgdir/usr/share/$pkgname
+  install -m644 -t $pkgdir/usr/share/$pkgname ../keys.txt
 }
 
 check() {
