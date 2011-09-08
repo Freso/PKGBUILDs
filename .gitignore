@@ -1,6 +1,7 @@
-# makepkg created directories
+# makepkg created directories and packages
 pkg/
 src/
+*.pkg.tar.xz
 
 # source files
 genpuid_linux_1.4.tgz
