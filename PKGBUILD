@@ -1,32 +1,16 @@
-# This is an example PKGBUILD file. Use this as a start to creating your own,
-# and remove these comments. For more information, see 'man PKGBUILD'.
-# NOTE: Please fill out the license field for your package! If it is unknown,
-# then please put 'unknown'.
-
-# Maintainer: Your Name <youremail@domain.com>
-pkgname=NAME
-pkgver=VERSION
+# Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
+pkgname=genpuid
+pkgver=1.4
 pkgrel=1
-epoch=
 pkgdesc=""
-arch=()
-url=""
-license=('GPL')
-groups=()
-depends=()
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=($pkgname-$pkgver.tar.gz)
-noextract=()
-md5sums=() #generate with 'makepkg -g'
+arch=(any)
+url="http://musicbrainz.org/doc/GenPUID"
+license=('unknown')
+depends=('libstdc++5')
+source=(http://ftp.musicbrainz.org/pub/musicbrainz/$pkgname/${pkgname}_linux_$pkgver.tgz
+        http://ftp.musicbrainz.org/pub/musicbrainz/$pkgname/keys.txt)
+md5sums=('fa4a6ae23adaaefa02f07de6321913fe'
+         'b4c70151b073b80157106c8fe84fdc80')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
