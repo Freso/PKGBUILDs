@@ -1,0 +1,7 @@
+# makepkg created directories
+pkg/
+src/
+
+# source files
+genpuid_linux_1.4.tgz
+keys.txt
