@@ -2,7 +2,7 @@
 pkgname=genpuid
 pkgver=1.4
 pkgrel=1
-pkgdesc=""
+pkgdesc="Utility for analyzing and fingerprinting audio files"
 arch=(any)
 url="http://musicbrainz.org/doc/GenPUID"
 license=('unknown')
