@@ -24,17 +24,6 @@ build() {
   install -m644 -t $pkgdir/usr/share/$pkgname ../keys.txt
 }
 
-check() {
-  cd "$srcdir/$pkgname-$pkgver"
-  if [ $pkgver = `./genpuid -v` ]; then
-    echo "Package and installed versions are the same ($pkgver).";
-    return 0;
-  else
-    echo "Version mismatch! Report to package maintainer!";
-    return 1;
-  fi
-}
-
 package() {
   cd "$srcdir/$pkgname-$pkgver"
   make DESTDIR="$pkgdir/" install
