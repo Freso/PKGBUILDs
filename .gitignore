@@ -2,6 +2,7 @@
 pkg/
 src/
 *.pkg.tar.xz
+*.src.tar.gz
 
 # source files
 genpuid_linux_*.tgz
