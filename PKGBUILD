@@ -24,9 +24,4 @@ build() {
   install -m644 -t $pkgdir/usr/share/$pkgname ../keys.txt
 }
 
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make DESTDIR="$pkgdir/" install
-}
-
 # vim:set ts=2 sw=2 et:
