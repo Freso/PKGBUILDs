@@ -12,6 +12,10 @@ source=(http://ftp.musicbrainz.org/pub/musicbrainz/$pkgname/${pkgname}_linux_$pk
 md5sums=('fa4a6ae23adaaefa02f07de6321913fe'
          'b4c70151b073b80157106c8fe84fdc80')
 
+if [ "$CARCH" = "x86_64" ]; then
+  depends=('lib32-libstdc++5')
+fi
+
 build() {
   cd "$srcdir/$pkgname-$pkgver"
   mkdir -p $pkgdir/usr/bin
