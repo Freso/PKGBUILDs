@@ -16,6 +16,7 @@ package() {
   cd "$srcdir/zelda"
   _sounddir="$pkgdir/usr/share/sounds/zelda/stereo"
   install -d "$_sounddir"
+  install -m644 -t "$_sounddir/.." $srcdir/index.theme
   install -m644 -t "$_sounddir" *.wav
 }
 
