@@ -1,7 +1,7 @@
 # Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
 pkgname=zelda-sound-theme
 pkgver=1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Sound theme based on The Legend of Zelda: Ocarina of Time."
 arch=(any)
 url="http://gnome-look.org/content/show.php?content=100023"
