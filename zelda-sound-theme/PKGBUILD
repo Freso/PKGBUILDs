@@ -7,8 +7,10 @@ arch=(any)
 url="http://gnome-look.org/content/show.php?content=100023"
 license=(unknown)
 changelog=ChangeLog
-source=(http://eqisow.org/misc/green_mod/zelda_sounds.tar.gz)
-md5sums=('96822221c8db58f3c0a5bc98c0c79890')
+source=(http://eqisow.org/misc/green_mod/zelda_sounds.tar.gz
+        index.theme)
+md5sums=('96822221c8db58f3c0a5bc98c0c79890'
+         '506d71a5e7ce5503ac2cdcf6a28705ec')
 
 package() {
   cd "$srcdir/zelda"
