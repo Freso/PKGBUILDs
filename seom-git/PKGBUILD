@@ -22,20 +22,20 @@ _gitname='seom'
 build() {
   cd ${srcdir}
   msg 'Connecting to Git server...'
-  
+
   if [ -d $_gitname ]; then
     cd $_gitname && git pull origin
     msg 'The local files have been updated.'
   else
     git clone $_gitroot $_gitname
   fi
-  
+
   msg "Git checkout done or server timeout"
   msg "Starting make..."
-  
+
   cp -r $_gitname $_gitname-build
   cd $_gitname-build
-  
+
   ./configure --prefix="/usr" || return 1
   make || return 1
   make DESTDIR="$pkgdir" install || return 1
