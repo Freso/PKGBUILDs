@@ -1,7 +1,7 @@
 # Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
 # Contributor: Juan Diego Tascón
 
-pkgname=seom-svn
+pkgname=seom-git
 pkgver=192
 pkgrel=1
 pkgdesc="Helper library for yukon, a screencapture solution for gaming."
@@ -9,7 +9,7 @@ arch=(i686)
 license=('GPL')
 url="https://devel.neopsis.com/projects/yukon/"
 depends=('libgl' 'libx11')
-makedepends=('subversion' 'yasm')
+makedepends=('git' 'yasm')
 conflicts=('seom')
 provides=('seom')
 
