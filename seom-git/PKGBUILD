@@ -36,8 +36,13 @@ build() {
   cp -r $_gitname $_gitname-build
   cd $_gitname-build
 
-  ./configure --prefix="/usr" || return 1
-  make || return 1
+  if [ "$CARCH" = "x86_64" ]; then
+    setarch i686 ./configure --prefix='/usr' || return 1
+    make CC='gcc -m32' LIBDIR='lib32' || return 1
+  else
+    ./configure --prefix="/usr" || return 1
+    make || return 1
+  fi
   make DESTDIR="$pkgdir" install || return 1
 }
 
