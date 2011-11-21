@@ -16,8 +16,8 @@ provides=('seom')
 source=()
 md5sums=()
 
-_svntrunk=https://devel.neopsis.com/svn/seom/trunk
-_svnmod=seom
+_gitroot='https://github.com/wereHamster/seom.git'
+_gitname='seom'
 
 build() {
   cd ${srcdir}
