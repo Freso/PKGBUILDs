@@ -1,6 +1,6 @@
-pkgname=picard-git
-pkgver=20120505
-pkgrel=2
+pkgname=picard-freso-git
+pkgver=20120603
+pkgrel=1
 pkgdesc="MusicBrainz tagging application"
 arch=('i686' 'x86_64')
 url="http://musicbrainz.org/doc/MusicBrainz_Picard"
@@ -9,8 +9,9 @@ depends=('python2-pyqt' 'mutagen' 'libofa' 'ffmpeg')
 optdepends=('libdiscid: CD-Lookup feature'
             'chromaprint: AcoustID integration')
 makedepends=('git')
-provides=('picard')
-conflicts=('picard' 'picard-qt' 'picard-bzr')
+provides=('picard' 'picard-git')
+replaces=('picard-git')
+conflicts=('picard' 'picard-qt' 'picard-bzr' 'picard-git')
 
 _gitroot=https://github.com/Freso/picard.git
 _gitname=picard
