@@ -1,38 +1,20 @@
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
 pkgname=minecraft-lwjgl-updater
-pkgver=VERSION
+pkgver=1
 pkgrel=1
-epoch=
 pkgdesc=""
-arch=()
+arch=('any')
 url=""
 license=('GPL')
 groups=()
-depends=()
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
+depends=('lwjgl')
+optdepends=('minecraft: The game itself. Installing as a package is preferred.')
 backup=()
 options=()
-install=
-changelog=
+changelog=ChangeLog
 source=($pkgname-$pkgver.tar.gz)
 noextract=()
 md5sums=() #generate with 'makepkg -g'
-
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  ./configure --prefix=/usr
-  make
-}
-
-check() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make -k check
-}
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
