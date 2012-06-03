@@ -13,7 +13,11 @@ provides=('picard' 'picard-git')
 replaces=('picard-git')
 conflicts=('picard' 'picard-qt' 'picard-bzr' 'picard-git')
 
-_gitroot=https://github.com/Freso/picard.git
+if [ -d "/srv/git/picard.git" ]; then
+  _gitroot=/srv/git/picard.git
+else
+  _gitroot=https://github.com/Freso/picard.git
+fi
 _gitname=picard
 
 build() {
