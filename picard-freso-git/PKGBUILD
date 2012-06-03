@@ -12,7 +12,7 @@ makedepends=('git')
 provides=('picard')
 conflicts=('picard' 'picard-qt' 'picard-bzr')
 
-_gitroot=https://github.com/musicbrainz/picard.git
+_gitroot=https://github.com/Freso/picard.git
 _gitname=picard
 
 build() {
