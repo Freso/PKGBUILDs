@@ -2,7 +2,7 @@
 pkgname=minecraft-lwjgl-updater
 pkgver=1
 pkgrel=1
-pkgdesc=""
+pkgdesc='Script to update the LWJGL used by Minecraft'
 arch=('any')
 url=""
 license=('GPL')
