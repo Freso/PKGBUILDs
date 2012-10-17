@@ -1,0 +1,23 @@
+# Contributor: mutantmonkey <mutantmonkey@mutantmonkey.in>
+pkgname=firefox-extension-scriptish
+pkgver=0.1.8
+pkgrel=1
+pkgdesc="Firefox add-on for user scripts (fork of Greasemonkey)"
+arch=('any')
+url="http://scriptish.org/"
+license=('MIT')
+depends=('firefox')
+conflicts=('scriptish')
+replaces=('scriptish')
+source=("http://releases.mozilla.org/pub/mozilla.org/addons/231203/scriptish-${pkgver}-sm+fx.xpi")
+sha256sums=('83a1bf7a3b025b7c3159aa1d206ab8dd421fe4ff65c741778bf4c85de08f49bd')
+
+package() {
+  cd $srcdir
+
+  emid=$(sed -n '/.*<em:id>\(.*\)<\/em:id>.*/{s//\1/p;q}' install.rdf) || return 1
+  installdir=$pkgdir/usr/lib/firefox/extensions/$emid
+
+  install -d ${installdir} || return 1
+  cp -a * ${installdir} || return 1
+}
