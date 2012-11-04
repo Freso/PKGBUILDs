@@ -2,7 +2,7 @@
 pkgname=python2-pastee
 pkgver=0.1.0
 pkgrel=1
-pkgdesc='Pastee.org command-line client/interface.'s
+pkgdesc='Pastee.org command-line client/interface.'
 arch=(any)
 url='https://pastee.org'
 license=('unknown')
