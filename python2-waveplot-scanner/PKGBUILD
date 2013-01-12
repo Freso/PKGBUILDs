@@ -1,0 +1,29 @@
+# Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
+pkgname=python2-waveplot-scanner
+pkgver=0.1
+pkgrel=1
+pkgdesc='Generates waveform images and submits them to Ben\Sput.'
+arch=('i686' 'x86_64')
+url='http://pi.ockmore.net:19048/download'
+license=('unknown')
+depends=('python2>=2.7' 'mutagen')
+makedepends=('ffmpeg' 'libpng')
+source=('http://pi.ockmore.net:19048/static/source.cpp'
+        'http://pi.ockmore.net:19048/static/scanner.py')
+sha1sums=('83acc0502fda7a2af45c4d268d028a0b52671b7f'
+          'e09d6ddac1a6f84e84d7eff204509175fc6e8ce7')
+
+build() {
+  cd "$srcdir"
+  g++ -std=c++0x -lpng -lavutil -lavcodec -lavformat -o 'WaveformImage' 'source.cpp'
+  echo '#!/usr/bin/python2' >> 'scanner2.py'
+  cat 'scanner.py' >> 'scanner2.py'
+}
+
+package() {
+  mkdir -p "$pkgdir/usr/bin"
+  install -Dm755 "$srcdir/scanner2.py" "$pkgdir/usr/bin/scanner.py"
+  install -Dm755 "$srcdir/WaveformImage" "$pkgdir/usr/bin/WaveformImage"
+}
+
+# vim:set ts=2 sw=2 et:
