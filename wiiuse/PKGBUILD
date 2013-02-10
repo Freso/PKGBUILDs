@@ -1,25 +1,25 @@
-#Contributor:Andrea Tarocchi <valdar@email.it> 
+#Contributor: Andrea Tarocchi <valdar@email.it>
 pkgname=wiiuse
 pkgver=0.12
 pkgrel=3
-pkgdesc="It is a library written in C that connects with several Nintendo Wii remotes." 
+pkgdesc="It is a library written in C that connects with several Nintendo Wii remotes."
 arch=(i686 x86_64)
-url="http://wiiuse.sourceforge.net/" 
+url="http://wiiuse.sourceforge.net/"
 depends=('bluez')
 license="GPL3"
 install=wiiuse.install
 postfix=_src.tar.gz
 source=("http://downloads.sourceforge.net/sourceforge/wiiuse/wiiuse_v${pkgver}_src.tar.gz"
-       "io_nix.patch") 
-
+        "io_nix.patch")
 md5sums=('29b555096f79dbd3fbc9b96b8d443083'
-        'a13f7ab73910f5e6ae06563bff2f7284')
+         'a13f7ab73910f5e6ae06563bff2f7284')
 
 _workdir="$srcdir/wiiuse_v$pkgver"
 
 build() {
   cd "$_workdir/src"
   patch -Nup0 < $srcdir/io_nix.patch
+
   cd "$_workdir"
   make wiiuse
 
