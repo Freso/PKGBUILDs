@@ -22,8 +22,9 @@ build() {
 
   cd "$_workdir"
   make wiiuse
+}
 
-#installing
+package() {
   mkdir -p "$pkgdir/usr/lib"
   mkdir -p "$pkgdir/usr/include"
 
