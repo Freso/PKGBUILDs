@@ -18,7 +18,7 @@ _workdir="$srcdir/wiiuse_v$pkgver"
 
 build() {
   cd "$_workdir/src"
-  patch -Nup0 < $srcdir/io_nix.patch
+  patch -Nup0 < "$srcdir/io_nix.patch"
 
   cd "$_workdir"
   make wiiuse
