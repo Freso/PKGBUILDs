@@ -1,7 +1,7 @@
 #Contributor: Andrea Tarocchi <valdar@email.it>
 pkgname=wiiuse
 pkgver=0.12
-pkgrel=3
+pkgrel=4
 pkgdesc="It is a library written in C that connects with several Nintendo Wii remotes."
 arch=(i686 x86_64)
 url="http://wiiuse.sourceforge.net/"
