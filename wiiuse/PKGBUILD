@@ -17,10 +17,10 @@ md5sums=('29b555096f79dbd3fbc9b96b8d443083'
 
 build() {
   cd $startdir/src/wiiuse_v$pkgver/src
-  patch -Nup0 < $srcdir/io_nix.patch || return 1
-#  patch -Np0 -i $srcdir/io_nix.patch || return 1
+  patch -Nup0 < $srcdir/io_nix.patch
+#  patch -Np0 -i $srcdir/io_nix.patch
   cd $startdir/src/wiiuse_v$pkgver
-  make wiiuse || return 1
+  make wiiuse
 
 #installing
   mkdir -p $startdir/pkg/usr/lib
