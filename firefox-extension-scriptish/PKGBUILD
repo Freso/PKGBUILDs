@@ -1,6 +1,11 @@
 # Contributor: mutantmonkey <mutantmonkey@mutantmonkey.in>
-pkgname=firefox-extension-scriptish
-pkgver=0.1.8
+
+_plugin_name=scriptish
+_plugin_version=0.1.8
+_plugin_id=231203
+
+pkgname=firefox-extension-${_plugin_name}
+pkgver=$_plugin_version
 pkgrel=1
 pkgdesc="Firefox add-on for user scripts (fork of Greasemonkey)"
 arch=('any')
@@ -9,7 +14,7 @@ license=('MIT')
 depends=('firefox')
 conflicts=('scriptish')
 replaces=('scriptish')
-source=("http://releases.mozilla.org/pub/mozilla.org/addons/231203/scriptish-${pkgver}-sm+fx.xpi")
+source=("https://addons.mozilla.org/firefox/downloads/latest/${_plugin_id}/${_plugin_name}-${_plugin_version}-sm+fx.xpi")
 sha256sums=('83a1bf7a3b025b7c3159aa1d206ab8dd421fe4ff65c741778bf4c85de08f49bd')
 
 package() {
