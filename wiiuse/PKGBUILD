@@ -15,16 +15,18 @@ source=("http://downloads.sourceforge.net/sourceforge/wiiuse/wiiuse_v${pkgver}_s
 md5sums=('29b555096f79dbd3fbc9b96b8d443083'
         'a13f7ab73910f5e6ae06563bff2f7284')
 
+_workdir="$srcdir/wiiuse_v$pkgver"
+
 build() {
-  cd "$srcdir/wiiuse_v$pkgver/src"
+  cd "$_workdir/src"
   patch -Nup0 < $srcdir/io_nix.patch
-  cd "$srcdir/wiiuse_v$pkgver"
+  cd "$_workdir"
   make wiiuse
 
 #installing
   mkdir -p "$pkgdir/usr/lib"
   mkdir -p "$pkgdir/usr/include"
 
-  install -D -m644 ./src/release-`gcc -v 2>&1|grep ^Target:|cut -d' ' -f2`/libwiiuse.so "$pkgdir/usr/lib"
-  install -D -m644 ./src/wiiuse.h "$pkgdir/usr/include"
+  install -D -m644 "$_workdir/src/release-`gcc -v 2>&1|grep ^Target:|cut -d' ' -f2`/libwiiuse.so" "$pkgdir/usr/lib"
+  install -D -m644 "$_workdir/src/wiiuse.h" "$pkgdir/usr/include"
 }
