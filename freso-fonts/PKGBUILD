@@ -1,7 +1,7 @@
 # Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
 
 pkgname=freso-fonts
-pkgver=20130210
+pkgver=20130212
 pkgrel=1
 pkgdesc='A collection of fonts for installing on various machines.'
 arch=('any')
@@ -17,6 +17,7 @@ depends=(
   # Community
   'ttf-droid'
   'ttf-liberation'
+  'ttf-symbola'
   # AUR
 )
 makedepends=()
