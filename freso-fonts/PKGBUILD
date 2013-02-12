@@ -1,0 +1,34 @@
+# Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
+
+pkgname=freso-fonts
+pkgver=20130210
+pkgrel=1
+pkgdesc='A collection of fonts for installing on various machines.'
+arch=('any')
+url=''
+license=('GPL')
+depends=(
+  # Core
+  # Extra
+  'ttf-bitstream-vera'
+  'ttf-dejavu'
+  'ttf-freefont'
+  'ttf-linux-libertine'
+  # Community
+  'ttf-droid'
+  'ttf-liberation'
+  # AUR
+)
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=('ttf-font')
+options=()
+install=
+changelog=
+
+package() {
+  return 0
+}
+
+# vim:set ts=2 sw=2 et:
