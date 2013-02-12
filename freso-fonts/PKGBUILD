@@ -22,7 +22,6 @@ depends=(
 makedepends=()
 checkdepends=()
 optdepends=()
-provides=('ttf-font')
 options=()
 install=
 changelog=
