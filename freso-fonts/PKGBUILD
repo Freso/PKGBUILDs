@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc='A collection of fonts for installing on various machines.'
 arch=('any')
 url=''
-license=('GPL')
+license=('CC0')
 depends=(
   # Core
   # Extra
