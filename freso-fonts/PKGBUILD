@@ -1,7 +1,7 @@
 # Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
 
 pkgname=freso-fonts
-pkgver=20130212
+pkgver=20130214
 pkgrel=1
 pkgdesc='A collection of fonts for installing on various machines.'
 arch=('any')
@@ -16,9 +16,17 @@ depends=(
   'ttf-linux-libertine'
   # Community
   'ttf-droid'
+  'ttf-inconsolata'
   'ttf-liberation'
   'ttf-symbola'
   # AUR
+  #'ttf-anonymous-pro/' # Programming; included with ttf-google-webfonts
+  'otf-ipafont' # Japanese support
+  'otf-gfs' # High quality greek characters
+  'otf-stix' # For science!
+  'ttf-monofur # Monospace
+  'ttf-inconsolata-g' # Programming
+  'ttf-google-webfonts' # Fonts! Fonts everywhere!
 )
 
 package() {
