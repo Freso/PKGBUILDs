@@ -20,12 +20,6 @@ depends=(
   'ttf-symbola'
   # AUR
 )
-makedepends=()
-checkdepends=()
-optdepends=()
-options=()
-install=
-changelog=
 
 package() {
   return 0
