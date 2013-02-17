@@ -20,13 +20,14 @@ depends=(
   'ttf-liberation'
   'ttf-symbola'
   # AUR
-  #'ttf-anonymous-pro/' # Programming; included with ttf-google-webfonts
   'otf-ipafont' # Japanese support
   'otf-gfs' # High quality greek characters
   'otf-stix' # For science!
-  'ttf-monofur # Monospace
-  'ttf-inconsolata-g' # Programming
   'ttf-google-webfonts' # Fonts! Fonts everywhere!
+  'ttf-anonymous-pro' # Programming; provided by ttf-google-webfonts
+  'ttf-monofur' # Monospace
+  #'ttf-inconsolata-g' # Programming; not retrieavable at the moment
+  #'source-code-pro-fonts' # More coding fonts; provided by ttf-google-webfonts
 )
 
 package() {
