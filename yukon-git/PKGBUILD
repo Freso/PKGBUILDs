@@ -6,10 +6,10 @@ _gitname=yukon
 pkgname=$_gitname-git
 pkgver=159.988a002
 pkgrel=1
-pkgdesc="A Screencapture solution for gaming."
+pkgdesc='A screencapture solution for gaming.'
 arch=(i686)
 license=('GPL')
-url="https://devel.neopsis.com/projects/yukon/"
+url='https://devel.neopsis.com/projects/yukon/'
 depends=('libgl' 'libx11' 'seom-git')
 makedepends=('git' 'yasm')
 conflicts=('yukon')
@@ -24,11 +24,11 @@ pkgver() {
 
 build() {
   cd "$_gitname"
-  
-  ./configure --prefix="/usr" || return 1
-  make || return 1
-  make DESTDIR="$pkgdir" install || return 1
-  install -D sysconf $pkgdir/etc/yukon/system/sysconf
+
+  ./configure --prefix='/usr'
+  make
+  make DESTDIR="$pkgdir" install
+  install -D sysconf "$pkgdir/etc/yukon/system/sysconf"
 }
 
 # vim:syntax=sh
