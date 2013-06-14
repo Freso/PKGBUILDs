@@ -14,6 +14,7 @@ depends=('libgl' 'libx11' 'seom-git')
 makedepends=('git' 'yasm')
 conflicts=('yukon')
 provides=('yukon')
+replaces=('yukon-svn')
 source=("$_gitname::git+https://github.com/wereHamster/$_gitname.git")
 md5sums=('SKIP')
 
