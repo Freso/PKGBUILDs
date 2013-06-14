@@ -25,13 +25,8 @@ pkgver() {
 build() {
   cd "$_gitname"
 
-  if [ "$CARCH" = "x86_64" ]; then
-    setarch i686 ./configure --prefix='/usr'
-    make CC='gcc -m32' LIBDIR='lib32'
-  else
-    ./configure --prefix="/usr"
-    make
-  fi
+  ./configure --prefix="/usr"
+  make
 }
 
 package() {
