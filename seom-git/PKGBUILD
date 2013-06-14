@@ -12,7 +12,8 @@ url='https://github.com/wereHamster/yukon/wiki'
 depends=('libgl' 'libx11')
 makedepends=('git' 'yasm')
 conflicts=('seom')
-provides=('seom')
+provides=('seom' 'seom-svn')
+replaces=('seom-svn')
 source=("$_gitname::git+https://github.com/wereHamster/$_gitname.git")
 md5sums=('SKIP')
 
