@@ -1,8 +1,9 @@
 # Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
 # Contributor: Juan Diego Tascón
 
-pkgname=seom-git
-pkgver=20111121
+_gitname='seom'
+pkgname=$_gitname-git
+pkgver=201.b30306d
 pkgrel=1
 pkgdesc="Helper library for yukon, a screencapture solution for gaming."
 arch=(i686 x86_64)
@@ -12,29 +13,16 @@ depends=('libgl' 'libx11')
 makedepends=('git' 'yasm')
 conflicts=('seom')
 provides=('seom')
+source=("$_gitname::git+https://github.com/wereHamster/$_gitname.git")
+md5sums=('SKIP')
 
-source=()
-md5sums=()
-
-_gitroot='https://github.com/wereHamster/seom.git'
-_gitname='seom'
+pkgver() {
+  cd "$_gitname"
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
 
 build() {
-  cd ${srcdir}
-  msg 'Connecting to Git server...'
-
-  if [ -d $_gitname ]; then
-    cd $_gitname && git pull origin
-    msg 'The local files have been updated.'
-  else
-    git clone $_gitroot $_gitname
-  fi
-
-  msg "Git checkout done or server timeout"
-  msg "Starting make..."
-
-  cp -r $_gitname $_gitname-build
-  cd $_gitname-build
+  cd "$_gitname"
 
   if [ "$CARCH" = "x86_64" ]; then
     setarch i686 ./configure --prefix='/usr' || return 1
