@@ -1,0 +1,33 @@
+# Contributor: Stefan Lohmaier <noneuss@gmail.com>
+# Contributor (since 9 jun 2010): Juan Diego Tascon
+
+_gitname=yukon
+pkgname=$_gitname-git
+pkgver=159.988a002
+pkgrel=1
+pkgdesc="A Screencapture solution for gaming."
+arch=(i686)
+license=('GPL')
+url="https://devel.neopsis.com/projects/yukon/"
+depends=('libgl' 'libx11' 'seom-git')
+makedepends=('git' 'yasm')
+conflicts=('yukon')
+provides=('yukon')
+source=("$_gitname::git+https://github.com/wereHamster/$_gitname.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$_gitname"
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+build() {
+  cd "$_gitname"
+  
+  ./configure --prefix="/usr" || return 1
+  make || return 1
+  make DESTDIR="$pkgdir" install || return 1
+  install -D sysconf $pkgdir/etc/yukon/system/sysconf
+}
+
+# vim:syntax=sh
