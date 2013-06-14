@@ -4,7 +4,7 @@
 _gitname='seom'
 pkgname=$_gitname-git
 pkgver=201.b30306d
-pkgrel=1
+pkgrel=2
 pkgdesc="Helper library for yukon, a screencapture solution for gaming."
 arch=(i686 x86_64)
 license=('GPL')
