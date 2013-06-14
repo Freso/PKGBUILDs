@@ -25,13 +25,13 @@ build() {
   cd "$_gitname"
 
   if [ "$CARCH" = "x86_64" ]; then
-    setarch i686 ./configure --prefix='/usr' || return 1
-    make CC='gcc -m32' LIBDIR='lib32' || return 1
+    setarch i686 ./configure --prefix='/usr'
+    make CC='gcc -m32' LIBDIR='lib32'
   else
-    ./configure --prefix="/usr" || return 1
-    make || return 1
+    ./configure --prefix="/usr"
+    make
   fi
-  make DESTDIR="$pkgdir" install || return 1
+  make DESTDIR="$pkgdir" install
 }
 
 # vim:syntax=sh
