@@ -1,0 +1,4 @@
+2013-08-03 Frederik "Freso" S. Olesen <archlinux@freso.dk>
+
+	* 3.0_beta1-1 :
+	Initial PKGBUILD, based off the one for mcpatcher.
