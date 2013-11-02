@@ -7,7 +7,7 @@ pkgdesc="XBMC Media Center Wiimote (Wii Remote) Eventclient"
 arch=('i686' 'x86_64')
 url="http://xbmc.org"
 license=('GPL3')
-depends=('xbmc' 'wiiuse' 'bluez4')
+depends=('xbmc' 'wiiuse' 'bluez')
 source=("http://mirrors.xbmc.org/releases/source/xbmc-$pkgver.tar.gz"
         "xbmc-wiiremote.service")
 
