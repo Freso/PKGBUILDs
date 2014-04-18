@@ -35,5 +35,5 @@ if [[ "$CARCH" == 'x86_64' ]]; then
     'lib32-alsa-oss: OSS support'
     'winetricks: For installing other Windows libraries and more.'
   )
-
+fi
 # vim:set ts=2 sw=2 et:
