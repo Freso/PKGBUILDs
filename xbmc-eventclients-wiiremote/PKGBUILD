@@ -1,4 +1,5 @@
-# Maintainer: schuay <jakob.gruber@gmail.com>
+# Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
+# Contributor: schuay <jakob.gruber@gmail.com>
 
 pkgname=xbmc-eventclients-wiiremote
 pkgver=12.2
