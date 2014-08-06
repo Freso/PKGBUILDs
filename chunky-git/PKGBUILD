@@ -1,23 +1,21 @@
 # Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
-pkgname=chunky-bzr
+_gitname=chunky
+pkgname=${_gitname}-git
 pkgver=1.1.2
 pkgrel=1
-_pkgname=chunky
-_bzrname=$_pkgname
-_bzrbranch=$_bzrname-1.1
 pkgdesc='A Minecraft mapping and rendering tool.'
 arch=('any')
 url='http://chunky.llbit.se/'
 license=('GPL3')
 depends=('java-runtime')
-makedepends=('bzr' 'apache-ant' 'java-environment')
+makedepends=('git' 'apache-ant' 'java-environment')
 optdepends=(
   'minecraft: The game itself.'
 )
 provides=('chunky')
 changelog=ChangeLog
 source=(
-  "$_bzrname::bzr+http://bazaar.launchpad.net/~jesper-oqvist/$_bzrname/$_bzrbranch/"
+  "git+https://github.com/llbit/${_gitname}.git"
   "chunky.desktop"
 )
 md5sums=('SKIP'
@@ -25,8 +23,7 @@ md5sums=('SKIP'
 
 pkgver() {
   cd "$srcdir/chunky"
-  #TODO: Use ant or something to determine the latest version (e.g., 1.1.2).
-  echo "1.1.2.$(bzr revno)"
+  git describe --long | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
 }
 
 build() {
