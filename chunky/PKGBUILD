@@ -9,7 +9,7 @@ url='http://chunky.llbit.se/'
 arch=('x86_64' 'i686')
 license=('GPL3')
 depends=('java-runtime')
-makedepends=('apache-ant' 'gendesk' 'unzip')
+makedepends=('gendesk' 'unzip')
 source=('http://chunkyupdate.llbit.se/ChunkyLauncher.jar'
        'chunky.sh')
 noextract=('ChunkyLauncher.jar')
