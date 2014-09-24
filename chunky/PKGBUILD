@@ -1,0 +1,31 @@
+# Maintainer: Daniel Leining <daniel@the-beach.co>
+# Contributor: Lakota Morris <lakota[at]lakotamorris[dot]com>
+
+pkgname=chunky
+pkgver=1.2.2
+pkgrel=1
+pkgdesc='Minecraft mapping and rendering tool'
+url='http://chunky.llbit.se/'
+arch=('x86_64' 'i686')
+license=('GPL3')
+depends=('java-runtime')
+makedepends=('gendesk' 'unzip')
+source=('http://chunkyupdate.llbit.se/ChunkyLauncher.jar'
+       'chunky.sh')
+noextract=('ChunkyLauncher.jar')
+md5sums=('e2a7d90a7169dc420946b637d0c98f7e'
+         '392fae626ea8337fd2914d63da65169a')
+
+prepare() {
+  gendesk -f -n --pkgname "$pkgname" --pkgdesc "$pkgdesc"
+  unzip -o -q ChunkyLauncher.jar chunky-cfg.png
+}
+
+package() {
+  install -Dm755 chunky.sh "$pkgdir/usr/bin/chunky"
+  install -Dm644 ChunkyLauncher.jar "$pkgdir/usr/share/java/chunky/ChunkyLauncher.jar"
+  install -Dm644 chunky.desktop "$pkgdir/usr/share/applications/chunky.desktop"
+  install -Dm644 chunky-cfg.png "$pkgdir/usr/share/pixmaps/chunky.png"
+}
+
+# vim:set ts=2 sw=2 et:
