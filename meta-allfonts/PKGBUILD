@@ -1,0 +1,15 @@
+# Maintainer: Frederik "Freso" S. Olesen <freso.dk@gmail.com>
+pkgname=meta-allfonts
+pkgver=1
+pkgrel=1
+pkgdesc='All font- and ttf- packages in official repositories.'
+arch=(any)
+url='https://wiki.archlinux.org/index.php/Fonts'
+license=('unknown')
+depends=(
+  $(echo "$(pacman -Ssq font) $(pacman -Ssq ttf)"|\
+  grep -E '^(font|ttf)-'|sort --unique))
+
+package() {
+	return 0
+}
