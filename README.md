@@ -1,17 +1,12 @@
-Moved to BitBucket
-==================
+Moved (back) to GitHub
+======================
 
-Since [GitHub's decision to disable uploads](https://github.com/blog/1302-goodbye-uploads)
-I have decided to move repositories which either will need a place to store
-packaged files or does not need GitHub's more advanced features off of GitHub.
-This includes my ArchLinux PKGBUILDs repository.
-
-The choice has fallen on [BitBucket](https://bitbucket.org/). They provide many
-of the same features of GitHub and has a similar interface. And they support
-Git, in addition to other DVCS's.
+Since I use GitHub far more than BitBucket and I generally, usually agree more
+with GitHub than BitBucket/Atlassian, I have decided to move the repository
+back to GitHub.
 
 My PKGBUILDs repository can now be found here:
-  https://bitbucket.org/Freso/pkgbuilds
+  https://github.com/Freso/PKGBUILDs
 
 Feel free to fork and make pull requests over there.
 
