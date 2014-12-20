@@ -6,9 +6,7 @@ pkgdesc='All font- and ttf- packages in official repositories.'
 arch=(any)
 url='https://wiki.archlinux.org/index.php/Fonts'
 license=('unknown')
-depends=(
-  $(echo "$(pacman -Ssq font) $(pacman -Ssq ttf)"|\
-  grep -E '^(font|ttf)-'|sort --unique))
+depends=($(pacman -Ssq '^(font|ttf)-'))
 
 package() {
 	return 0
