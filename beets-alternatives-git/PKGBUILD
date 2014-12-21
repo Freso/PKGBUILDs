@@ -19,6 +19,12 @@ pkgver() {
   printf "0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
+check() {
+  cd "$srcdir/$_pkgname"
+  touch test/__init__.py
+  python2 setup.py test
+}
+
 package() {
   cd "$srcdir/$_pkgname"
   rm 'beetsplug/__init__.py'
