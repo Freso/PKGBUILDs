@@ -8,9 +8,8 @@ pkgdesc='Plugin for beets to verify the integrity of your audio files.'
 arch=('any')
 url='https://github.com/geigerzaehler/beets-check'
 license=('MIT')
-depends=('python2' 'beets')
+depends=('python2' 'beets' 'python2-futures')
 makedepends=('git')
-checkdepends=('python2-futures')
 optdepends=(
   'flac: Check FLAC file integrity.'
   'liboggz: Check Ogg Vorbis file integrity.'
