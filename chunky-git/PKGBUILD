@@ -12,7 +12,7 @@ makedepends=('git' 'apache-ant' 'java-environment')
 optdepends=(
   'minecraft: The game itself.'
 )
-provides=('chunky')
+provides=("$_pkgname")
 changelog=ChangeLog
 source=(
   "git+https://github.com/llbit/${_pkgname}.git"
@@ -22,12 +22,12 @@ md5sums=('SKIP'
          '88d8c8cca805047ce10e20774b6cbc8a')
 
 pkgver() {
-  cd "$srcdir/chunky"
+  cd "$srcdir/$_pkgname"
   git describe --long | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
 }
 
 build() {
-  cd "$srcdir/chunky"
+  cd "$srcdir/$_pkgname"
   ant jar
   
   cp Chunky.sh ../
@@ -35,7 +35,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/chunky"
+  cd "$srcdir/$_pkgname"
 
   install -d "$pkgdir/usr/share/doc/$_pkgname"
   install -m644 -t "$pkgdir/usr/share/doc/$_pkgname" ./*.txt Chunky.bat Chunky.sh
