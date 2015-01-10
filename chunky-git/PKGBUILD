@@ -32,8 +32,7 @@ build() {
   cd "$srcdir/$_pkgname"
   ant jar
   
-  cp Chunky.sh ../
-  sed -i "s|Chunky\.jar|/usr/share/java/$_pkgname/Chunky\.jar|" ../Chunky.sh
+  sed "s|Chunky\.jar|/usr/share/java/$_pkgname/Chunky\.jar|" Chunky.sh > ../chunky.sh
 }
 
 package() {
@@ -43,7 +42,7 @@ package() {
   install -m644 -t "$pkgdir/usr/share/doc/$_pkgname" ./*.txt Chunky.bat Chunky.sh
 
   install -vDm644 'build/Chunky.jar'     "$pkgdir/usr/share/java/$_pkgname/Chunky.jar"
-  install -vDm755 '../Chunky.sh'         "$pkgdir/usr/bin/chunky"
+  install -vDm755 '../chunky.sh'         "$pkgdir/usr/bin/chunky"
   install -vDm644 'bin/chunky.png'       "$pkgdir/usr/share/pixmaps/chunky.png"
   install -vDm644 '../chunky.desktop'    "$pkgdir/usr/share/applications/chunky.desktop"
 }
