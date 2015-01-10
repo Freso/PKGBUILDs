@@ -1,6 +1,6 @@
 # Maintainer: Frederik "Freso" S. Olesen <archlinux@freso.dk>
-_gitname=chunky
-pkgname=${_gitname}-git
+_pkgname=chunky
+pkgname=${_pkgname}-git
 pkgver=1.1.2
 pkgrel=1
 pkgdesc='A Minecraft mapping and rendering tool.'
@@ -15,7 +15,7 @@ optdepends=(
 provides=('chunky')
 changelog=ChangeLog
 source=(
-  "git+https://github.com/llbit/${_gitname}.git"
+  "git+https://github.com/llbit/${_pkgname}.git"
   "chunky.desktop"
 )
 md5sums=('SKIP'
