@@ -13,6 +13,8 @@ optdepends=(
   'minecraft: The game itself.'
 )
 provides=("$_pkgname")
+conflicts=("$_pkgname")
+replaces=('chunky-bzr')
 changelog=ChangeLog
 source=(
   "git+https://github.com/llbit/${_pkgname}.git"
